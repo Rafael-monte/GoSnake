@@ -4,13 +4,10 @@ import (
 	"GoSnake/view"
 )
 
-const inMargin int = 0
-
 type Snake struct {
-	XAxis  int
-	YAxis  int
-	XSpeed int
-	YSpeed int
+	XSpeed     int
+	YSpeed     int
+	SnakeParts []SnakePart
 }
 
 func (s *Snake) ChangeDirection(coordinate view.Coordinate) {
@@ -19,29 +16,14 @@ func (s *Snake) ChangeDirection(coordinate view.Coordinate) {
 }
 
 func (s *Snake) UpdateState(screenMeasurements view.ScreenMeasurements) {
-	s.calculateHorizontalSpeed(screenMeasurements.Width)
-	s.calculateVerticalSpeed(screenMeasurements.Height)
-}
-
-func (s *Snake) calculateHorizontalSpeed(width int) {
-	s.XAxis = (s.XAxis + s.XSpeed) % width
-	if s.XAxis < inMargin {
-		s.XAxis += width
-	}
-}
-
-func (s *Snake) calculateVerticalSpeed(height int) {
-	s.YAxis = (s.YAxis + s.YSpeed) % height
-	if s.YAxis < inMargin {
-		s.YAxis += height
-	}
+	s.SnakeParts = append(s.SnakeParts, s.SnakeParts[len(s.SnakeParts)-1].GetUpdatedPart(s, screenMeasurements))
+	s.SnakeParts = s.SnakeParts[1:]
 }
 
 func NewSnake() Snake {
 	return Snake{
-		XAxis:  5,
-		YAxis:  10,
-		XSpeed: 1,
-		YSpeed: 0,
+		XSpeed:     1,
+		YSpeed:     0,
+		SnakeParts: NewSnakeParts(),
 	}
 }

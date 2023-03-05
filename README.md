@@ -1,7 +1,9 @@
 # GoSnake: Implementação do Jogo "Snake" feito em Golang :snake:
 #### Feito por Rafael Monteiro Zancanaro e Robson Oliveira
-#### Créditos a [Elad Rapaport](https://betterprogramming.pub/build-a-snake-game-using-in-go-b4186e21d011) pelo tutorial :blue_heart:
+#### Créditos a [Elad Rapaport](https://betterprogramming.pub/build-a-snake-game-using-in-go-b4186e21d011) pelo tutorial :blue_heart: 
 
+
+![alt text](https://github.com/egonelbre/gophers/blob/master/.thumb/animation/gopher-dance-long-3x.gif)</div>
 ## Como rodar?
 
 ### Linux
@@ -26,3 +28,6 @@ chmod +x GoSnake
 GoSnake.exe
 ```
 
+#### É isso!
+
+![faloou](https://github.com/egonelbre/gophers/blob/master/.thumb/animation/2bit-sprite/demo.gif)

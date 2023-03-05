@@ -3,6 +3,7 @@ package main
 import (
 	"GoSnake/controller"
 	"GoSnake/model"
+	"GoSnake/view"
 	"log"
 
 	"github.com/gdamore/tcell"
@@ -17,16 +18,9 @@ func main() {
 	if err := screen.Init(); err != nil {
 		log.Fatalf("%+v", err)
 	}
+	screen.SetStyle(view.GetDefaultStyle())
 
-	defStyle := tcell.StyleDefault.Background(tcell.ColorBlack).Foreground(tcell.ColorWhite)
-	screen.SetStyle(defStyle)
-
-	snake := model.Snake{
-		XAxis:  5,
-		YAxis:  10,
-		XSpeed: 1,
-		YSpeed: 0,
-	}
+	snake := model.NewSnake()
 
 	game := controller.Game{
 		Screen: screen,

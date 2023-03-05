@@ -36,3 +36,12 @@ func (s *Snake) calculateVerticalSpeed(height int) {
 		s.YAxis += height
 	}
 }
+
+func NewSnake() Snake {
+	return Snake{
+		XAxis:  5,
+		YAxis:  10,
+		XSpeed: 1,
+		YSpeed: 0,
+	}
+}

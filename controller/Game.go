@@ -59,7 +59,9 @@ func (game *Game) ListenKeyEvents() {
 		game.Screen.Sync()
 	case *tcell.EventKey:
 		if !game.GameOver {
-			inputController[event.Key()](game)
+			if _, isPresent := inputController[event.Key()]; isPresent {
+				inputController[event.Key()](game)
+			}
 		}
 		if _, isPresent := optionsController[event.Rune()]; isPresent {
 			optionsController[event.Rune()](game)

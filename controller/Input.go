@@ -28,4 +28,25 @@ var inputController = map[tcell.Key]func(game *Game){
 	tcell.KeyRight: func(game *Game) {
 		game.Snake.ChangeDirection(view.Right)
 	},
+	tcell.KeyEnter: func(game *Game) {
+		if game.GameOver {
+			go game.Run()
+		}
+	},
+	tcell.KeyBackspace: func(game *Game) {
+		if game.GameOver {
+			game.Screen.Fini()
+			os.Exit(0)
+		}
+	},
+}
+
+var optionsController = map[rune]func(game *Game){
+	'y': func(game *Game) {
+		go game.Run()
+	},
+	'n': func(game *Game) {
+		game.Screen.Fini()
+		os.Exit(0)
+	},
 }

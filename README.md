@@ -15,3 +15,12 @@ chmod +x GoSnake
 ./GoSnake
 ```
 
+### Windows
+
+1. Baixe o executável nas [releases](https://github.com/Rafael-monte/GoSnake/releases/tag/v.0.1-win-64-stable) e mova ele para um diretório de sua preferência
+
+2. Abra um terminal no diretório onde está o executável e digite o seguinte comando:
+```cmd
+GoSnake.exe
+```
+

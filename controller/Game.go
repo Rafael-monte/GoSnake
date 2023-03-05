@@ -23,7 +23,7 @@ func (g *Game) Run() {
 	for {
 		g.Screen.Clear()
 		g.Snake.UpdateState(screenMeasurements)
-		g.Screen.SetContent(g.Snake.XAxis, g.Snake.YAxis, ' ', nil, snakeStyle)
+		drawParts(g.Screen, g.Snake.SnakeParts, snakeStyle)
 		time.Sleep(40 * time.Millisecond)
 		g.Screen.Show()
 	}
@@ -35,5 +35,11 @@ func (game *Game) ListenKeyEvents() {
 		game.Screen.Sync()
 	case *tcell.EventKey:
 		inputController[event.Key()](game)
+	}
+}
+
+func drawParts(s tcell.Screen, parts []model.SnakePart, style tcell.Style) {
+	for _, part := range parts {
+		s.SetContent(part.XAxis, part.YAxis, ' ', nil, style)
 	}
 }

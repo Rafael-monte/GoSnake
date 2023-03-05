@@ -1,5 +1,5 @@
 # GoSnake: Implementação do Jogo "Snake" feito em Golang :snake:
-#### Feito por 👉 [Rafael Monteiro Zancanaro :mage:](https://github.com/Rafael-monte) e [Robson Oliveira :ninja:](https://github.com/robso-oliveira)
+#### Feito por 👉 [Rafael Monteiro Zancanaro :mage_man:](https://github.com/Rafael-monte) e [Robson Oliveira :ninja:](https://github.com/robso-oliveira)
 #### Créditos a [Elad Rapaport](https://betterprogramming.pub/build-a-snake-game-using-in-go-b4186e21d011) pelo tutorial :blue_heart: 
 
 
